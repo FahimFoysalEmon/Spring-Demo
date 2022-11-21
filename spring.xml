@@ -4,9 +4,14 @@
 
     <bean id="triangle" class="com.example.springdemo.Triangle">
 
-<!--        //set the value to that 'type' property of that class-->
-        <property name="type" value="Equilateral" />
+        <!--set the value to that 'type' property of that class-->
+        <!--<property name="type" value="Equilateral" />-->
+
+        <constructor-arg value="Equilateral" />
+        <constructor-arg value="and this is perfect shape" />
 
     </bean>
+
+
 
 </beans>
