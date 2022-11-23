@@ -2,29 +2,29 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="com.example.springdemo.Triangle">
+<!--    <bean id="triangle" class="com.example.springdemo.Triangle">-->
 
-        <!--set the value to that 'type' property of that class-->
-        <!--<property name="type" value="Equilateral" />-->
+<!--        &lt;!&ndash;set the value to that 'type' property of that class&ndash;&gt;-->
+<!--        &lt;!&ndash;<property name="type" value="Equilateral" />&ndash;&gt;-->
 
-<!--        <constructor-arg value="Equilateral" />-->
-<!--        <constructor-arg value="and this is perfect shape" />-->
+<!--&lt;!&ndash;        <constructor-arg value="Equilateral" />&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg value="and this is perfect shape" />&ndash;&gt;-->
 
-        <property name="pointA" ref="point1" ></property>
+<!--        <property name="pointA" ref="point1" ></property>-->
+<!--        <property name="pointB" ref="point2" ></property>-->
+<!--        <property name="pointC" ref="point3" ></property>-->
+<!--    </bean>-->
 
-        <property name="pointB" >
-            <bean class="com.example.springdemo.Point">
-                <property name="x" value="-20"></property>
-                <property name="y" value="0"></property>
-            </bean>
+    <bean id="listOfTriangles" class="com.example.springdemo.ListOfPointsForTriangle">
+
+        <property name="points">
+            <list>
+                <ref bean="point1"></ref>
+                <ref bean="point2"></ref>
+                <ref bean="point3"></ref>
+            </list>
         </property>
 
-        <property name="pointC" >
-            <bean class="com.example.springdemo.Point">
-                <property name="x" value="20"></property>
-                <property name="y" value="0"></property>
-            </bean>
-        </property>
     </bean>
 
 
@@ -33,9 +33,15 @@
         <property name="y" value="0"></property>
     </bean>
 
+    <bean id="point2" class="com.example.springdemo.Point">
+        <property name="x" value="-20"></property>
+        <property name="y" value="0"></property>
+    </bean>
 
-
-
+    <bean id="point3" class="com.example.springdemo.Point">
+        <property name="x" value="20"></property>
+        <property name="y" value="0"></property>
+    </bean>
 
 
 

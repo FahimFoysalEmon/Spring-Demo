@@ -18,9 +18,11 @@ public class SpringDemoApplication {
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
-        Triangle triangle = (Triangle) factory.getBean("triangle");
+//        Triangle triangle = (Triangle) factory.getBean("triangle");
 
-        triangle.draw();
+        ListOfPointsForTriangle listOfPointsForTriangle = (ListOfPointsForTriangle) factory.getBean("listOfTriangles");
+
+        listOfPointsForTriangle.draw();
     }
 
 }
