@@ -11,8 +11,20 @@
 <!--        <constructor-arg value="and this is perfect shape" />-->
 
         <property name="pointA" ref="point1" ></property>
-        <property name="pointB" ref="point2" ></property>
-        <property name="pointC" ref="point3" ></property>
+
+        <property name="pointB" >
+            <bean class="com.example.springdemo.Point">
+                <property name="x" value="-20"></property>
+                <property name="y" value="0"></property>
+            </bean>
+        </property>
+
+        <property name="pointC" >
+            <bean class="com.example.springdemo.Point">
+                <property name="x" value="20"></property>
+                <property name="y" value="0"></property>
+            </bean>
+        </property>
     </bean>
 
 
@@ -21,15 +33,9 @@
         <property name="y" value="0"></property>
     </bean>
 
-    <bean id="point2" class="com.example.springdemo.Point">
-        <property name="x" value="-20"></property>
-        <property name="y" value="0"></property>
-    </bean>
 
-    <bean id="point3" class="com.example.springdemo.Point">
-        <property name="x" value="20"></property>
-        <property name="y" value="0"></property>
-    </bean>
+
+
 
 
 
